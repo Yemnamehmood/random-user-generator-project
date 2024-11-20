@@ -2,20 +2,133 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* global.css */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #2e2e2e, #393646, #3f3c56);
+  color: #d1d1e9; 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.container {
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px; 
+}
+
+h1 {
+  color: #b39ddb; 
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  animation: bounce 1.5s ease-in-out infinite;
+
+  
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px); /* Move up */
+  }
+  60% {
+    transform: translateY(-5px);  /* Small bounce */
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+
+.user-card {
+  display: inline-block;
+  text-align: left;
+  background: #1e1e2d;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  margin: 20px auto;
+  max-width: 400px;
+  color: #f1f1f1; 
+  margin-bottom: 15px;
 }
+
+.user-card img.user-picture {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #6a5acd;
+}
+
+button {
+  background: #6a5acd; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #836fff; 
+}
+
+footer {
+  margin-top: 50px;
+  padding: 10px;
+  background: #29293a;
+  color: #b39ddb;
+  font-size: 14px;
+  text-align: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.4);
+
+}
+
+@media (max-width: 768px) {
+  .user-card {
+    max-width: 90%; 
+    padding: 15px; 
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  button {
+    padding: 8px 15px; 
+    font-size: 0.9rem;
+  }
+
+  footer {
+    font-size: 12px; 
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem; 
+    margin-bottom: 15px;
+  }
+
+  .user-card {
+    padding: 10px;
+  }
+
+  button {
+    padding: 7px 12px; 
+    font-size: 0.8rem;
+  }
+}
+
